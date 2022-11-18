@@ -10,20 +10,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Owners {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idOwner;
-	
 
 	private String nomOwner;
-	
 
-	private long coinsOwned;
-	
+	private float coinsOwned;
+
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 
@@ -31,20 +29,19 @@ public class Owners {
 
 	@ManyToOne
 	private Bitcoin bitcoin;
-	
+
 	public Owners() {
 		super();
 	}
 
-	public Owners(String nomOwner,long coinsOwned, Date purchaseDate) {
+	public Owners(String nomOwner, long coinsOwned, Date purchaseDate) {
 		super();
 		this.nomOwner = nomOwner;
 		this.purchaseDate = purchaseDate;
 		this.coinsOwned = coinsOwned;
 	}
-	
 
-	public long getCoinsOwned() {
+	public float getCoinsOwned() {
 		return coinsOwned;
 	}
 

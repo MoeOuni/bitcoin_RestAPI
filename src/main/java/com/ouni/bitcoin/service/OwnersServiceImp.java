@@ -3,10 +3,12 @@ package com.ouni.bitcoin.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ouni.bitcoin.entities.Owners;
 import com.ouni.bitcoin.repos.OwnersRepository;
 
+@Service
 public class OwnersServiceImp implements OwnersService {
 
 	@Autowired
