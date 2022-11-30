@@ -17,7 +17,7 @@ import com.ouni.bitcoin.service.BitcoinService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin("*")
 public class BitcoinRESTController {
 	
 	@Autowired
